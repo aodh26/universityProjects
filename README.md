@@ -29,3 +29,6 @@ Patients can: Register.
               make or cancel an appointment(taking into account the doctors schedule).
 
 Only the users allocated web pages are accessible to them. E.G a doctor may not go on the days off web page.  
+
+
+CA2 is a fast paced game where you must pass through gates to score points and drop bombs to kill the enemies. It is made using JS, flask, html and python.
