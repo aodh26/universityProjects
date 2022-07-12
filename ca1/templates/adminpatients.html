@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Patients</h1>
+<img id='admin' src="{{url_for('static', filename='tools.jpg')}}" alt='Image of tools'/>
+<p>
+    Update Money Owed: <a href="{{url_for('moneyowed')}}">Here</a>
+</p>
+{%block moneyowed%}
+{%endblock%}
+
+{% for row in patients%}
+<table> 
+ <tr>
+     <td>
+        PPS Number:
+     </td>
+     <td>
+        {{row['pps']}}
+     </td>
+ </tr>
+ <tr>
+    <td>
+       Money Owed:
+    </td>
+    <td>
+       {{row['moneyowed']}}
+    </td>
+</tr>
+<tr>
+    <td>
+       Next or Last Appointment:
+    </td>
+    <td>
+       {{row['nextappointment']}}
+    </td>
+</tr>
+<tr>
+    <td>
+       Appointment Time:
+    </td>
+    <td>
+       {{row['appointmenttime']}}
+    </td>
+</tr>
+<tr>
+    <td>
+        Phone Number:
+    </td>
+    <td>
+       {{row['number']}}
+    </td>
+</tr>
+</table>   
+</br> 
+{%endfor%}
+<p>
+    return to <a href="{{url_for('adminprofile')}}">profile</a>
+</p>
+<small>All images are licensed under CC0 Public Domain <a href='https://pixabay.com/vectors/screwdriver-tang-tools-wrench-2024005/'>image source</a></small>
+{%endblock%}

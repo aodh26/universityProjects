@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Staff</h1>
+<img id='admin' src="{{url_for('static', filename='tools.jpg')}}" alt='Image of tools'/>
+<p>
+    Add new member of staff <a href="{{url_for('newstaff')}}">Here</a>
+</p>
+{%block newstaff%}
+{%endblock%}
+
+<p>
+    Remove a member of staff <a href="{{url_for('removestaff')}}">Here</a>
+</p>
+
+{%block removestaff%}
+{%endblock%}
+{% for row in staff%}
+<table> 
+    {%for key in row.keys()%}
+    {%if key!='password'%}
+    <tr>
+        <td>{{key}}</td>
+        <td>{{row[key]}}</td>
+    </tr>
+    {%endif%}
+    {%endfor%}
+</table>   
+</br> 
+{%endfor%}
+
+<p>
+    return to <a href="{{url_for('adminprofile')}}">profile</a>
+</p>
+<small>All images are licensed under CC0 Public Domain <a href='https://pixabay.com/vectors/screwdriver-tang-tools-wrench-2024005/'>image source</a></small>
+{%endblock%}

@@ -1,0 +1,54 @@
+{%extends 'calender.html'%}
+{%block update%}
+<form id='form' action='' method='post' novalidate>
+    {{ form.hidden_tag() }}
+    {{form.pps.label}}
+    {{form.pps()}}
+    {% for error in form.pps.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.startdate.label}}
+    {{form.startdate()}}
+    {% for error in form.startdate.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.enddate.label}}
+    {{form.enddate()}}
+    {% for error in form.enddate.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.newstartdate.label}}
+    {{form.newstartdate()}}
+    {% for error in form.newstartdate.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.newenddate.label}}
+    {{form.newenddate()}}
+    {% for error in form.newenddate.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{form.submit()}}
+    </form>
+<p>
+    <a  href="{{url_for('calender')}}">hide days off window</a>
+</p>
+{%endblock%}

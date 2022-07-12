@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Dr. {{doctor[0][1]}}'s Profile</h1>
+<img id='doctorimg' src="{{url_for('static', filename='doctor3.jpg')}}" alt='Image of a doctor'/>
+<p>
+    Prescribe medicine for patient <a href="{{url_for('prescribe')}}">Here</a>
+</p>
+{%block prescribe%}
+{%endblock%}
+
+<p>
+    Unprescribe medicine for patient <a href="{{url_for('removeprescribe')}}">Here</a>
+</p>
+{%block removeprescribe%}
+{%endblock%}
+
+<p>
+    Diagnose illness for patient <a href="{{url_for('diagnose')}}">Here</a>
+</p>
+{%block diagnose%}
+{%endblock%}
+
+<p>
+    Remove illness from patient <a href="{{url_for('removediagnose')}}">Here</a>
+</p>
+{%block removediagnose%}
+{%endblock%}
+
+<p>
+    Notes for patient <a href="{{url_for('notes')}}">Here</a>
+</p>
+{%block notes%}
+{%endblock%}
+{%if patients%}
+<h2>Your Patients</h2>
+{%for patient in patients%}
+<table>
+{%for row in patient%}
+{%for key in row.keys()%}
+{%if key=='moneyowed'%}
+    <tr>
+        <td>
+            Money Owed: 
+        </td>
+        <td id='doctortable'>
+            {{row[key]}}
+        </td>
+    </tr>
+        {%elif key=='nextappointment'%}
+    <tr>
+        <td>
+            Next or Last</br> Appointment: 
+        </td>
+        <td id='doctortable'>
+            {{row[key]}}
+        </td>
+    </tr>
+        {%elif key=='note'%}
+    <tr>
+        <td>
+            Note and Date:
+        </td>
+        <td id='doctortable'>
+           {{row['date']}}--{{row['note']}}
+        </td>
+    </tr>
+    {%elif key=='appointmenttime'%}
+    <tr>
+        <td>
+            Appointment</br>Time: 
+        </td>
+        <td id='doctortable'>
+            {{row[key]}}
+        </td>
+    </tr>
+{%elif key!='password' and key!='note' and key!='date'%}
+<tr>
+    <td>
+        {{key}}:
+    </td>
+    <td id='doctortable'>
+        {{row[key]}}
+    </td>
+</tr>
+{%endif%}
+{%endfor%}
+{%endfor%} 
+</table>
+</br>
+</br>
+{%endfor%}
+{%endif%}
+<small>All images are licensed under CC0 Public Domain <a href='https://www.publicdomainpictures.net/en/view-image.php?image=198170&picture=doctor-holding-money'>image source</a></small>
+
+{%endblock%}

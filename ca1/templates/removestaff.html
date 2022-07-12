@@ -1,0 +1,18 @@
+{%extends 'staff.html'%}
+{%block newstaff%}
+<form id='form' action='' method='post' novalidate>
+    {{ form.hidden_tag() }}
+    {{form.pps.label}}
+    {{form.pps()}}
+    {% for error in form.pps.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{form.submit()}}
+    </form>
+<p>
+    <a  href="{{url_for('staff')}}">hide remove staff member window</a>
+</p>
+{%endblock%}

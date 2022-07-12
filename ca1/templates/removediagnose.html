@@ -1,0 +1,27 @@
+{%extends 'doctor.html'%}
+{%block removediagnose%}
+<form id='form' action='' method='post' novalidate>
+    {{ form.hidden_tag() }}
+    {{form.pps.label}}
+    {{form.pps()}}
+    {% for error in form.pps.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.illness.label}}
+    {{form.illness()}}
+    {% for error in form.illness.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{form.submit()}}
+    </form>
+<p>
+    <a  href="{{url_for('doctorprofile')}}">hide diagnoses window</a>
+</p>
+{%endblock%}

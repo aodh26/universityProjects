@@ -1,0 +1,56 @@
+{%extends 'staff.html'%}
+{%block newstaff%}
+<form id='form' action='' method='post' novalidate>
+    {{ form.hidden_tag() }}
+    {{form.pps.label}}
+    {{form.pps()}}
+    {% for error in form.pps.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.name.label}}
+    {{form.name()}}
+    {% for error in form.name.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.role.label}}
+    {{form.role()}}
+    {% for error in form.role.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.password.label}}
+    {{form.password()}}
+    {% for error in form.password.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.password2.label}}
+    {{form.password2()}}
+    {% for error in form.password2.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{form.submit()}}
+    </form>
+
+<p>
+    <a  href="{{url_for('staff')}}">hide new staff member window</a>
+</p>
+
+{%endblock%}

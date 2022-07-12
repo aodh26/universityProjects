@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Appointment</h1>
+<img id='appointmentimg' src="{{url_for('static', filename='calendar.jpg')}}" alt='Image of a calendar'/>
+<p>please fill out <b>all </b>fields</p>
+<form id='form' action='' method='post' novalidate>
+    {{ form.hidden_tag() }}
+    {{form.appointment.label}}
+    {{form.appointment()}}
+    {% for error in form.appointment.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{form.submit()}}
+    </form>
+{{booked}}
+<br>
+{%if booked%}
+<p>Your appointment time is: {{patienttime}}.</p>
+{%endif%}
+<p>
+    <a  href="{{url_for('patientprofile')}}">Return to profile</a>
+</p>
+<small>All images are licensed under CC0 Public Domain <a href='https://pixabay.com/vectors/calendar-date-month-day-week-1763587/'>image source</a></small>
+{%endblock%}

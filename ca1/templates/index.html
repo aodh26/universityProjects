@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<img src="{{url_for('static', filename='doctor.jpg')}}" alt='doctor'/>
+<h1>Welcome</h1>
+
+<h2>To The Health Clinic</h2>
+
+{%if patient%}
+<p id='welcome'>
+    Welcome back {{patient[0][1]}}
+</p>
+<p id='profile'>
+    <a href="{{url_for('patientprofile')}}">Your Profile and Appointments</a>
+</p>
+{%elif staff%}
+{%if staff[0][2]=='admin'%}
+<p id='welcome'>
+    Welcome back {{staff[0][1]}}
+</p>
+<p id='profile'>
+    <a href="{{url_for('adminprofile')}}">Your Profile</a>
+</p>
+{%else%}
+<p id='welcome'>
+    Welcome back {{staff[0][1]}}
+</p>
+<p id='profile'>
+    <a href="{{url_for('doctorprofile')}}">Your Profile</a>
+</p>
+{%endif%}
+{%endif%}
+<p>
+    Our professional range of doctors are highly trained to look after your every need!
+</p>
+<p>
+   If you're already a patient, or member of the staff in the clinic: <a href="{{url_for('login')}}">Login Here</a>
+</p>
+<p>
+    If you would like to become a patient of the clinic: <a href="{{url_for('register')}}">Register Here</a>
+</p>
+<p>
+    At The Health Clinic we care!
+</p>
+<small>All images are licensed under CC0 Public Domain <a href='https://www.publicdomainpictures.net/en/view-image.php?image=209459&picture=doctor'>image source</a></small>
+{%endblock%}

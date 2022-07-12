@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Login</h1>
+<form id='form' action='' method='post' novalidate>
+    {{ form.hidden_tag() }}
+    {{form.pps.label}}
+    {{form.pps()}}
+    {% for error in form.pps.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+<br/>
+{{ form.hidden_tag() }}
+{{form.password.label}}
+{{form.password()}}
+{% for error in form.password.errors%}
+<br>
+{{error}}
+<br/>
+{%endfor%}
+<br/>
+{{form.submit()}}
+</form>
+{%endblock%}

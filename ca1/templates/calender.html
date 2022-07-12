@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<h1>Calender</h1>
+<img id='calendar' src="{{url_for('static', filename='calendar.jpg')}}" alt='Image of a calendar'/>
+<p>
+    Insert New Days off: <a href="{{url_for('daysoff')}}">Here</a>
+</p>
+{%block daysoff%}
+{%endblock%}
+<p>
+    Update or Delete Days off: <a href="{{url_for('updatedelete')}}">Here</a>
+</p>
+{%block updatedelete%}
+{%endblock%}
+{%block update%}
+{%endblock%}
+{%block delete%}
+{%endblock%}
+{%if daysoff%}
+<h2>Scheduled Days Off</h2>
+{% for row in daysoff%}
+<table> 
+ <tr>
+     <td>
+        Staff's PPS Number:
+     </td>
+     <td>
+        {{row['pps']}}
+     </td>
+ </tr>
+ <tr>
+    <tr>
+    <td>
+      Day/s off start date:
+    </td>
+    <td>
+       {{row['startdate']}}
+    </td>
+</tr>
+<tr>
+    <td>
+        Day/s off end date:
+    </td>
+    <td>
+        {{row['enddate']}}
+    </td>
+</tr>
+</table>   
+</br> 
+{%endfor%}
+{%endif%}
+{%if appointments%}
+<h2>Scheduled Appointments</h2>
+{% for row in appointments%}
+<table> 
+ <tr>
+     <td>
+        Doctor's PPS Number:
+     </td>
+     <td>
+        {{row['doctorpps']}}
+     </td>
+ </tr>
+ <tr>
+<tr>
+    <td>
+        Patient's PPS Number:
+    </td>
+    <td>
+        {{row['patientpps']}}
+    </td>
+</tr>
+    <tr>
+    <td>
+      Appointment Date:
+    </td>
+    <td>
+       {{row['appointment']}}
+    </td>
+</tr>
+<tr>
+    <td>
+       Time:
+    </td>
+    <td>
+       {{row['time']}}
+    </td>
+</tr>
+</table>   
+</br> 
+{%endfor%}
+{%endif%}
+<p>
+    return to <a href="{{url_for('adminprofile')}}">profile</a>
+</p>
+<small>All images are licensed under CC0 Public Domain <a href='https://pixabay.com/vectors/calendar-date-month-day-week-1763587/'>image source</a></small>
+{%endblock%}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Health Clinic</title>
+    <link rel='stylesheet' href="{{url_for('static', filename='styles.css')}}">
+    <link href="{{url_for('static', filename='plus.jpg')}}" rel="icon">
+</head>
+<header >
+    {%if g.user%}
+    <p>
+        PPS Number: {{g.user}}
+    </p>
+    <p>
+        <a href="{{url_for('logout')}}">Logout</a>
+    </p>
+    {%else%}
+    <p>
+        <a href="{{url_for('register')}}">Register</a>
+    </p>
+    <p>
+        <a href="{{url_for('login')}}">Login</a>
+    </p>
+    {%endif%}
+</header>
+<body>
+    {%block content%}
+    {%endblock%}
+</body>
+<footer>
+    <small>Contact the clinic at: 1800-123-4567 or at our email: healthclinic@clinic.ie</small>
+</footer>
+</html>

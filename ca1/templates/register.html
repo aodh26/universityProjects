@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>
+    Registration
+</h1>
+<img id='registerimg' src="{{url_for('static', filename='doctor4.jpg')}}" alt='Image of a doctor'/>
+<p>Please fill in <b>all</b> Fields.</p>
+<form id='form' action='' method='post' novalidate>
+    {{ form.hidden_tag() }}
+    {{form.pps.label}}
+    {{form.pps()}}
+    {% for error in form.pps.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.name.label}}
+    {{form.name()}}
+    {% for error in form.name.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.gender.label}}
+    {{form.gender()}}
+    {% for error in form.gender.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    {{ form.hidden_tag() }}
+    {{form.dob.label}}
+    {{form.dob()}}
+    {% for error in form.dob.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.weight.label}}
+    {{form.weight()}}
+    {% for error in form.weight.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.height.label}}
+    {{form.height()}}
+    {% for error in form.height.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.smoker.label}}
+    {{form.smoker()}}
+    {% for error in form.smoker.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.email.label}}
+    {{form.email()}}
+    {% for error in form.email.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.number.label}}
+    {{form.number()}}
+    {% for error in form.number.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.doctor.label}}
+    {{form.doctor()}}
+    {% for error in form.doctor.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.password.label}}
+    {{form.password()}}
+    {% for error in form.password.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.password2.label}}
+    {{form.password2()}}
+    {% for error in form.password2.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{form.submit()}}
+</form>
+<small>All images are licensed under CC0 Public Domain <a href='https://www.publicdomainpictures.net/en/view-image.php?image=209452&picture=doctor'>image source</a></small>
+
+{%endblock%}

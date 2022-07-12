@@ -1,0 +1,19 @@
+{%extends 'patient.html'%}
+{%block cancel%}
+<form id='form' action='' method='post' novalidate>
+    {{ form.hidden_tag() }}
+    {{form.cancel.label}}
+    {{form.cancel()}}
+    {% for error in form.cancel.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{form.submit()}}
+    </form>
+{{message}}
+<p>
+    <a  href="{{url_for('patientprofile')}}">hide cancellation window</a>
+</p>
+{%endblock%}

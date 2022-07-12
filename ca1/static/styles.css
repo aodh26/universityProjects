@@ -1,0 +1,152 @@
+html {
+  background-color: rgb(230, 246, 248);
+}
+
+header{
+  background-color: lightskyblue;
+  margin: auto;
+  font-size: 1.3em;
+  padding: 12px;
+}
+header p, header a{
+  color: black;
+  display: inline;
+  padding: 15px;
+  text-decoration: none;
+}
+header a:visited{
+  padding: 15px;
+  text-decoration: none;
+  color:black;
+}
+body {
+  background-color: white;
+  width: 87%;
+  margin: auto;
+  margin-top: 35px;
+}
+
+p{
+  font-size: 1.2em;
+}
+
+h1 {
+  color: purple;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 3em;
+  background-color: rgb(250, 226, 245);
+  border-radius: 16px;
+  display: inline-block;
+  margin-left: 7px;
+  
+}
+
+h2 {
+  text-align: left;
+  font-weight: bold;
+  color: purple;
+  width: 65%;
+  font-size: 200%;
+}
+
+img{
+  max-width: 30%;
+  position: absolute;
+  margin-left: 730px;
+  margin-top: 15px;
+  margin-bottom: 300px;
+}
+
+#registerimg, #calendar{
+  margin-left: 300px;
+  margin-top: 150px;
+}
+
+#patientprofile{
+  margin-top: 300px;
+  margin-left: 0px;
+}
+
+#appointmentimg{
+  margin-left: 100px;
+  margin-bottom: 200px;
+  margin-top: 15px;
+}
+
+#updateprofile{
+  margin-left: 500px;
+}
+
+#admin{
+  margin-left: 500px;
+  max-width: 20%;
+  margin-top: 20px;
+}
+#doctorimg{
+  margin-left: 100px;
+  margin-top: 100px;
+  max-width: 20%;
+}
+#welcome{
+  background-color: black;
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: 25%;
+  text-align: center;
+}
+
+#profile a, #profile a:visited, #profile a:link{
+  background-color: black;
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: 13%;
+  text-align: center;
+  border-radius: 15px;
+  font-size: 1.1em;
+  padding:5px;
+}
+
+
+@media (hover:hover) {
+  a:hover{
+    font-size: 1.3em;
+    transition-duration: 1s;
+  }
+  #profile:hover{
+    font-size: 1.5em;
+    transition-duration: 1s;
+  }
+  #submit:hover{
+    font-size: 1.1em;
+    transition-duration: 1s;
+  }
+}
+
+footer {
+  margin-top:0px;
+}
+
+#form{
+  font-size: 22px;
+}
+
+td{
+  font-size: 17px;
+  border:lightgray 1px solid;
+}
+
+#submit{
+  background-color: lightskyblue;
+  font-size: 17px;
+  margin-top: 10px;
+}
+
+#doctortable{
+  border:none;
+}
+
+small{
+  margin-top: 300px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}

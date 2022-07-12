@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p>Please fill in <b>all</b> details.</p>
+<img id='updateprofile' src="{{url_for('static', filename='plus.jpg')}}" alt='Image of a medical plus'/>
+<form id='form' action='' method='post' novalidate>
+    {{ form.hidden_tag() }}
+    {{form.name.label}}
+    {{form.name()}}
+    {% for error in form.name.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.gender.label}}
+    {{form.gender()}}
+    {% for error in form.gender.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.weight.label}}
+    {{form.weight()}}
+    {% for error in form.weight.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.height.label}}
+    {{form.height()}}
+    {% for error in form.height.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.smoker.label}}
+    {{form.smoker()}}
+    {% for error in form.smoker.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.email.label}}
+    {{form.email()}}
+    {% for error in form.email.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.number.label}}
+    {{form.number()}}
+    {% for error in form.number.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.password.label}}
+    {{form.password()}}
+    {% for error in form.password.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.password2.label}}
+    {{form.password2()}}
+    {% for error in form.password2.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{form.submit()}}
+</form>
+<small>All images are licensed under CC0 Public Domain <a href='https://pixabay.com/vectors/green-cross-medical-ambulance-28931/'>image source</a></small>
+{%endblock%}

@@ -1,0 +1,27 @@
+{%extends 'doctor.html'%}
+{%block notes%}
+<form id='form' action='' method='post' novalidate>
+    {{ form.hidden_tag() }}
+    {{form.patientpps.label}}
+    {{form.patientpps()}}
+    {% for error in form.patientpps.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{ form.hidden_tag() }}
+    {{form.note.label}}
+    {{form.note()}}
+    {% for error in form.note.errors%}
+    <br>
+    {{error}}
+    <br/>
+    {%endfor%}
+    <br/>
+    {{form.submit()}}
+    </form>
+<p>
+    <a  href="{{url_for('doctorprofile')}}">hide notes window</a>
+</p>
+{%endblock%}

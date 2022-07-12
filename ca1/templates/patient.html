@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{patient[0][1]}}'s Profile</h1>
+<img id='patientprofile' src="{{url_for('static', filename='plus.jpg')}}" alt='Image of a medical plus'/>
+<p>
+    Make an appointment: <a href="{{url_for('appointment')}}">Here</a>
+</p>
+
+<p>
+    Cancel an appointment: <a href="{{url_for('cancel')}}">Here</a>
+</p>
+
+{%block cancel%}
+{%endblock%}
+
+<p>
+    Change information on profile: <a href="{{url_for('updateprofile')}}">Here</a>
+</p>
+
+<h2>Your information</h2>
+<table>
+    <tr>
+        <td>
+            doctor:
+        </td>
+        <td>
+            {{doctorname}}
+        </td>
+    </tr>
+    {%for dictionary in patient%}
+    {%for key in dictionary.keys()%}
+    <tr>
+        {%if key=='moneyowed'%}
+        <td>
+            money owed: 
+        </td>
+        <td>
+            {{dictionary[key]}}
+        </td>
+        {%elif key=='nextappointment'%}
+        <td>
+            next or last appointment: 
+        </td>
+        <td>
+            {{dictionary[key]}}
+        </td>
+        {%elif key=='appointmenttime'%}
+        <td>
+            appointment time: 
+        </td>
+        <td>
+            {{dictionary[key]}}
+        </td>
+        {%elif key!='password'%}
+        <td>
+            {{key}}: 
+        </td>
+        <td>
+            {{dictionary[key]}}
+        </td>
+        {%endif%}
+    </tr>
+    {%endfor%}
+    {%endfor%}
+</table>
+{%if illness and medicine%}
+<h2>Your diagnosed illnesses</h2>
+<table>
+    {%for dictionary in illness%}
+    {%for key in dictionary.keys()%}
+    {%if key!='patientpps'%}
+    <tr>
+        <td>
+            {{key}}:
+        </td>
+        <td>
+            {{dictionary[key]}}
+        </td>
+
+    </tr>
+    {%endif%}
+    {%endfor%}
+    {%endfor%}
+</table>
+<h2>Your perscribed medicines</h2>
+<table>
+    {%for dictionary in medicine%}
+    {%for key in dictionary.keys()%}
+    {%if key!='patientpps'%}
+    <tr>
+        <td>
+            {{key}}:
+        </td>
+        <td>
+            {{dictionary[key]}}
+        </td>
+
+    </tr>
+    {%endif%}
+    {%endfor%}
+    {%endfor%}
+</table>
+{%endif%}
+<small>All images are licensed under CC0 Public Domain <a href='https://pixabay.com/vectors/green-cross-medical-ambulance-28931/'>image source</a></small>
+
+{%endblock%}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<img id='admin' src="{{url_for('static', filename='tools.jpg')}}" alt='Image of tools'/>
+<h1>{{admin[0][1]}}'s Profile</h1>
+
+<p>
+    View staff <a href="{{url_for('staff')}}">Here</a>
+</p>
+{%block staff%}
+{%endblock%}
+
+<p>
+    View patients <a href="{{url_for('adminpatients')}}">Here</a>
+</p>
+{%block adminpatients%}
+{%endblock%}
+
+<p>
+    View Calender <a href="{{url_for('calender')}}">Here</a>
+</p>
+{%block appointments%}
+{%endblock%}
+<small>All images are licensed under CC0 Public Domain <a href='https://pixabay.com/vectors/screwdriver-tang-tools-wrench-2024005/'>image source</a></small>
+
+{%endblock%}
