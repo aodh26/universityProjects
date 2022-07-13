@@ -1,0 +1,119 @@
+canvas {
+  background-color: black;
+  display: block;
+  margin: 1em auto;
+}
+
+#pretimer {
+  position: fixed;
+  margin-left: 600px;
+  margin-top: 200px;
+  width: auto;
+  align-items: center;
+  font-size: 5em;
+  color: red;
+  font-weight: bold;
+}
+
+#timer {
+  text-align: left;
+  position: fixed;
+  top: 20px;
+  left: 170px;
+  width: 16%;
+  margin: 0;
+  font-size: 2em;
+  color: yellow;
+  font-weight: bold;
+}
+
+#timerpic {
+  position: fixed;
+  top: 10px;
+  left: 120px;
+  margin: 0;
+}
+
+#score {
+  text-align: left;
+  position: fixed;
+  top: 640px;
+  left: 120px;
+  width: 16%;
+  margin: 0;
+  font-size: 2em;
+  color: yellow;
+  font-weight: bold;
+}
+#health {
+  text-align: left;
+  position: fixed;
+  top: 640px;
+  left: 1100px;
+  width: 16%;
+  margin: 0;
+  font-size: 2em;
+  color: yellow;
+  font-weight: bold;
+}
+
+#healthpic {
+  position: fixed;
+  top: 625px;
+  left: 1040px;
+  margin: 0;
+}
+
+html {
+  background-color: rgb(241, 116, 116);
+}
+
+h4 {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+h4 + ul {
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+#submit {
+  background-color: black;
+  color: white;
+  font-size: 2em;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+label,
+#name {
+  font-size: 2em;
+}
+a {
+  font-size: 1.5em;
+}
+
+#bombimg {
+  position: absolute;
+  margin-left: 800px;
+}
+#explosionimg {
+  position: absolute;
+  margin-left: 900px;
+  width: 150px;
+}
+
+#bombimg2 {
+  position: absolute;
+  margin-left: 1000px;
+}
+
+table {
+  display: table;
+  margin: auto;
+  font-size: 1.5em;
+  counter-reset: list-number 0;
+}
+td {
+  border: black 2px solid;
+  padding: 15px;
+}

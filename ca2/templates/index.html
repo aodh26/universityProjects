@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel='stylesheet' href="{{url_for('static', filename='styles.css')}}">
+    <link href="{{url_for('static', filename='bomb.png')}}" rel="icon">
+    <title>ca2</title>
+</head>
+
+<body>
+    <h1>
+        Welcome to Bombs and Baddies!
+    </h1>
+    <img id='bombimg' src="{{url_for('static', filename='bombimg.png')}}" alt="A cartoon bomb" />
+    <h2>Pick a name and play!</h2>
+    <form id='form' action='' method='post' novalidate>
+        {{ form.hidden_tag() }}
+        {{form.name.label}}
+        {{form.name()}}
+        {% for error in form.name.errors%}
+        <br>
+        {{error}}
+        <br />
+        {%endfor%}
+        <br />
+        {{form.submit()}}
+    </form>
+
+    <h2>
+        Check out the current scoreboard!
+    </h2>
+    <p>
+        <a href="{{url_for('getscoreboard')}}">
+            Current Scoreboard
+        </a>
+    </p>
+
+    <h2>
+        <u>Instructions:</u>
+    </h2>
+    <img id='explosionimg' src="{{url_for('static', filename='explosion.png')}}" alt="A cartoon explosion" />
+    <h3>
+        Controls:
+    </h3>
+    <ul>
+        <li>You can move with the arrow keys or by pressing the W(up), A(left), S(right) and D(down) keys if you are
+            left handed.</li>
+        <li>Press the space bar to drop a bomb!</li>
+    </ul>
+    <h3>
+        Aim:
+    </h3>
+    <ul>
+        <li>You have 30 seconds to get as many points as possible!</li>
+        <li>The rooms are randomised every time you play. A new experience every time!</li>
+        <li> Speed and accuracy are the names of the game!</li>
+        <li>Touching a wall will kill you! they're covered in ectoplasm!</li>
+        <li>You get points from blowing up Ghosts or going through doorways.</li>
+        <li>You get more points from going through doorways than you do for blowing up Ghosts.</li>
+    </ul>
+    <img id='bombimg' src="{{url_for('static', filename='bombimg.png')}}" alt="A cartoon bomb" />
+    <h3>
+        Baddies:
+    </h3>
+    <p>
+        There are two types of baddies:
+
+    </p>
+    <h4>
+        Ghosts
+    </h4>
+    <ul>
+        <li>Ghosts can walk through walls and follow the player.</li>
+        <li>They do 25 damage when they touch the player and also knock the player back.</li>
+        <li>You get points if you blow them up with a Bomb!</li>
+        <li>Be Careful! Don't get knocked into a wall!</li>
+    </ul>
+    <h4>
+        Lizards
+    </h4>
+    <ul>
+        <li>Lizards walk around randomly and do not follow the player.</li>
+        <li>But be careful, they're immune to bombs and kill in one hit!</li>
+    </ul>
+    <img id='explosionimg' src="{{url_for('static', filename='explosion.png')}}" alt="A explosion bomb" />
+    <h3>
+        Bombs:
+    </h3>
+    <ul>
+        <li>Bombs can be dropped by pressing space and take 1 second to explode.</li>
+        <li>Don't worry though, you're wearing an anti-bomb suit!</li>
+    </ul>
+</body>
+<small>
+    Background music: "Power Up" by Jeremy Blake<br>
+    Sprite's designed by Sithjester
+</small>
+
+</html>

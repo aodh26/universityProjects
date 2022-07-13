@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8' />
+    <title>
+        ca2
+    </title>
+    <link rel='stylesheet' href="{{ url_for('static', filename='styles.css')}}" />
+    <link href="{{url_for('static', filename='bomb.png')}}" rel="icon">
+    <script src="{{ url_for('static', filename='index.js')}}" type='module'>
+    </script>
+</head>
+
+<body>
+    <p id='score'></p>
+    <p id='timer'></p>
+    <img id='timerpic' alt='heart' src="{{ url_for('static', filename='clock.png')}}" />
+    <img id='healthpic' alt='heart' src="{{ url_for('static', filename='heart.png')}}" />
+    <p id='health'></p>
+    <p id='pretimer'></p>
+    <!--1040x760-->
+    <canvas width='1040' height='680'>
+
+    </canvas>
+
+    <!--<audio autoplay>
+        <source id='hitsound' src='' type='audio/mpeg'>
+        </audio>
+        <audio autoplay loop>
+            <source src="gamemusicnew.mp3" type="audio/mpeg">
+        </audio>-->
+</body>
+
+</html>
